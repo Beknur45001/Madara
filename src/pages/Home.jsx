@@ -1,12 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getProductFetch } from '../redux/products/productSlise'
+import ProductList from '../components/ProductList/ProductList'
 
 function Home() {
+  const {product, loading, error, category, search} = useSelector((state) => state.product)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getProductFetch({category, search}))
+  }, [dispatch, category, search])
+
   return (
     <div className='box'>
-      <h1>ghbnj</h1>
-      <h1>tnj</h1>
-      <h1>gyuhij</h1>
-      <h1>yubhijn</h1>
+   <ProductList data={product} />
     </div>
   )
 }
