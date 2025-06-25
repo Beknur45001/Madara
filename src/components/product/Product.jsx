@@ -9,8 +9,8 @@ function Product({pro}) {
     <div>
       <div>
         <img src={pro.image} alt="" />
-        <h4>{pro.title}</h4>
-        <p>${pro.price}</p>
+        {/* <h4>{pro.title}</h4>
+        <p>${pro.price}</p> */}
       </div>
     </div>
   )

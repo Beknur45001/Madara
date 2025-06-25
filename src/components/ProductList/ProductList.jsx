@@ -14,14 +14,11 @@ function ProductList({data}) {
 
     return (
       <div className='pr'>
-            {
-              data.map((i) => (
-                <div  key={i.id}>
-                  <Product pro={i}/>
-                  {/* <Wishlist pro1={i}/> */}
-                </div>
-              ))
-            }
+          {
+          data?.map((product) => (
+  <Product pro={product} />
+))}
+
     </div>
   )
 }
